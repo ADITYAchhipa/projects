@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Assistant by Aditya</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .btn {
+      padding: 15px 30px;
+      background-color: #1481ee;
+      color: white;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0f6ad6;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="btn" onclick="openAIWidget()">Talk to AI Agent</button>
+
+  <!-- Omnidimension Widget -->
+  <script
+    id="omnidimension-web-widget"
+    async
+    src="https://backend.omnidim.io/web_widget.js?secret_key=d5ed79f2e67c00d773a1a01bc13f5128">
+  </script>
+
+  <script>
+    function openAIWidget() {
+      // Wait for the widget to load, then open it
+      if (window.OmnidimensionWebWidget) {
+        window.OmnidimensionWebWidget.open();
+      } else {
+        alert("Widget is still loading. Please try again in a few seconds.");
+      }
+    }
+  </script>
+
+</body>
+</html>
